@@ -1,25 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider,StyleReset } from 'atomize';
+
+const theme = {
+  colors: {
+    brand100: "info100",
+    brand200: "info200",
+    brand300: "info300",
+    brand400: "info400",
+    brand500: "info500",
+    brand600: "info600",
+    brand700: "info700",
+    brand800: "info800",
+    brand900: "info9  00",
+  }
+};
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  return (  
+    <React.Fragment>
+      <ThemeProvider theme={theme}>
+        <StyleReset/>
+      </ThemeProvider>
+    </React.Fragment>
   );
 }
 
