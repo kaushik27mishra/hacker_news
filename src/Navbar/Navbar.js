@@ -18,14 +18,13 @@ export default class NavBar extends Component {
                 d="flex"
                 bg="info600"
                 align="center"
-                p="1rem"
-                shadow="3"
+                shadow="5"
                 >
                 <Icon name="LeftArrow" color="#382683" size="40px" />
                 <Icon name="RightArrow" color="#382683" size="40px" />
                 <Text 
                     tag="h2" 
-                    textSize="display1"
+                    textSize="heading"
                     textColor="info900"
                     hoverTextColor="black900"
                     cursor="pointer"
@@ -33,25 +32,27 @@ export default class NavBar extends Component {
                     Hacker News
                 </Text>
                 <Div 
-                pos="static"
-                p={{l:"66rem"}}
+                    pos="static"
+                    p={{l:"50rem"}}
                 >
                     <Input
-                        placeholder="Loading on Search"
+                        placeholder="Search"
+                        h="2rem"
                         suffix={
                             <Button
                                 pos="absolute"
                                 onClick={() => this.setState({ isLoading: !isLoading })}
                                 bg="transparent"
-                                w="3rem"
+                                w="2rem"
                                 top="0"
                                 right="0"
+                                p={{b:'0.5rem'}}
                                 rounded={{ r: "md" }}
                             >
                         <Icon
                             name={isLoading ? "Loading" : "Search"}
                             color={isLoading ? "gray900" : "black"}
-                            size="16px"
+                            size="20px"
                         />
                         </Button>
                         }
