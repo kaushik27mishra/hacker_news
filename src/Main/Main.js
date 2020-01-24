@@ -22,8 +22,8 @@ export default class Main extends Component {
     render() {
         return (
             <div>
-                {this.state.storyIds.map((storyIds,i) => {
-                    return <Story storyid={storyIds} key={i}/>
+                {this.state.storyIds.map((storyIds) => {
+                    return <Story storyid={storyIds} key={storyIds}/>
                 })}
             </div>
         )

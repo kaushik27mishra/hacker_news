@@ -7,18 +7,14 @@ export default class Story extends Component {
         super(props)
     
         this.state = {
-            by:"",
-            title:"",
-            text:""
         }
     }
     
 
     componentDidMount() {
         getStory(this.props.storyid).then((data) =>  {
-            this.setState({
-                title: data.title,
-                text: data.text
+            data && data.url && this.setState({...data}, () => {
+                console.log(this.state);
             })
         })
     }
@@ -36,13 +32,14 @@ export default class Story extends Component {
                             {this.state.title}
                         </Text>
                         <Text textSize="caption" textColor="light">
-                            {this.state.by}
+                            By- {this.state.by}, Date- {Date(this.state.date)}
                         </Text>
                     </Div>
                     <Div>
-                            <Text textSize="caption" textColor="dark">
-                                {this.state.text}
-                            </Text>
+                        <Text textSize="caption" textColor="dark">
+                            {this.state.text}
+                        </Text>
+                        <a href={this.state.url}>For more details click here!</a>
                     </Div>
                 </Div>
             </Div>
