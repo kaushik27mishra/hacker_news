@@ -15,7 +15,7 @@ export default class Main extends Component {
         getStoryIds().then(data => {
             this.setState({
                 storyIds:data
-            }, console.log(data))
+            })
         })
     }
     

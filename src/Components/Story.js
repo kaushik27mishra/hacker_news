@@ -13,9 +13,7 @@ export default class Story extends Component {
 
     componentDidMount() {
         getStory(this.props.storyid).then((data) =>  {
-            data && data.url && this.setState({...data}, () => {
-                console.log(this.state);
-            })
+            data && data.url && this.setState({...data})
         })
     }
 
